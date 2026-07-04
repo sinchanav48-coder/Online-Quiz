@@ -75,13 +75,15 @@
                 </label>
 
                 <input
-                    type="password"
+                     type="password"
                     id="password"
-                    name="password"
+                     name="password"
                     placeholder="🔒 Password"
                     autocomplete="current-password"
+                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                    title="Password must be at least 8 characters and include uppercase, lowercase, number, and special character."
                     required
-                >
+            >
 
             </div>
 
@@ -334,27 +336,24 @@
 
 </div>
     <!-- RESULT -->
-
 <section id="resultPage" class="result hide">
 
     <h1>Quiz Completed 🎉</h1>
 
     <h2 id="finalScore"></h2>
 
- <section class="history">
-
+    <section class="history">
         <h2>Previous Results</h2>
-
         <div id="history"></div>
-
     </section>
 
     <button onclick="goHome()">
-        Back to Dashboard
+        Login Again
     </button>
 
 </section>
-</div>
+
+</div> 
 
 <script src="script.js"></script>
 
