@@ -151,9 +151,10 @@ function logout(){
     document.getElementById("quizPage").classList.add("hide");
     document.getElementById("resultPage").classList.add("hide");
 
-    document.querySelector(".cards").classList.remove("hide");
-    document.querySelector(".welcome").classList.remove("hide");
-    document.querySelector(".history").classList.remove("hide");
+    document.querySelector(".hero-section").classList.remove("hide");
+    document.querySelector(".dashboard-stats").classList.remove("hide");
+    document.querySelector(".subject-section").classList.remove("hide");
+    document.querySelector(".history").classList.remove("hide");    
 
 }
 
@@ -166,8 +167,9 @@ function startQuiz(subject){
 
     score = 0;
 
-    document.querySelector(".cards").classList.add("hide");
-    document.querySelector(".welcome").classList.add("hide");
+    document.querySelector(".hero-section").classList.add("hide");
+    document.querySelector(".dashboard-stats").classList.add("hide");
+    document.querySelector(".subject-section").classList.add("hide");
     document.querySelector(".history").classList.add("hide");
 
     document.getElementById("quizPage").classList.remove("hide");
@@ -292,8 +294,9 @@ function goHome(){
 
     document.getElementById("resultPage").classList.add("hide");
 
-    document.querySelector(".cards").classList.remove("hide");
-    document.querySelector(".welcome").classList.remove("hide");
+    document.querySelector(".hero-section").classList.remove("hide");
+    document.querySelector(".dashboard-stats").classList.remove("hide");
+    document.querySelector(".subject-section").classList.remove("hide");
     document.querySelector(".history").classList.remove("hide");
 
     showHistory();

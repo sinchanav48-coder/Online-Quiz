@@ -107,7 +107,8 @@
                 track your progress, and become a better programmer.
             </p>
 
-            <button class="explore-btn">
+            <button class="explore-btn"
+                onclick="document.querySelector('.subject-section').scrollIntoView({behavior:'smooth'})">
                 Start Learning
             </button>
 
@@ -228,7 +229,7 @@
 
     </section>
 
-    <!-- ================= QUIZ SECTION ================= -->
+    <!--  QUIZ SECTION  -->
 
     <section id="quizPage" class="quiz hide">
 
@@ -244,7 +245,7 @@
             </div>
 
         </div>
-
+    
         <!-- Progress -->
 
         <div class="progress-container">
@@ -284,23 +285,15 @@
     </section>
 
 </div>
-    <!--  RESULT  -->
+    <!-- RESULT -->
 
-    <section id="resultPage" class="result hide">
+<section id="resultPage" class="result hide">
 
-        <h1>Quiz Completed 🎉</h1>
+    <h1>Quiz Completed 🎉</h1>
 
-        <h2 id="finalScore"></h2>
+    <h2 id="finalScore"></h2>
 
-        <button onclick="goHome()">
-            Back to Dashboard
-        </button>
-
-    </section>
-
-    <!--HISTORY  -->
-
-    <section class="history">
+ <section class="history">
 
         <h2>Previous Results</h2>
 
@@ -308,6 +301,11 @@
 
     </section>
 
+    <button onclick="goHome()">
+        Back to Dashboard
+    </button>
+
+</section>
 </div>
 
 <script src="script.js"></script>

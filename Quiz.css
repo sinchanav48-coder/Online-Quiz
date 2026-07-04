@@ -133,9 +133,7 @@ body {
     background: #eef3ff;
 }
 
-/* ===============================
-   NAVBAR
-================================= */
+/* NAVBAR */
 
 .navbar {
     width: 100%;
@@ -182,10 +180,7 @@ body {
     background: #dc2626;
 }
 
-/* ===============================
-   HERO SECTION
-================================= */
-
+/* HERO SECTION */
 .hero-section {
     width: 92%;
     margin: 30px auto;
@@ -222,9 +217,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* ===============================
-   STATISTICS
-================================= */
+/* STATISTICS*/
 
 .dashboard-stats {
     width: 92%;
@@ -257,9 +250,7 @@ body {
     font-size: 34px;
 }
 
-/* ===============================
-   SUBJECT SECTION
-================================= */
+/* SUBJECT SECTION*/
 
 .subject-section {
     width: 92%;
