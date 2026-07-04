@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+}
+
+/* Hide Elements */
+
+#dashboard {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+#loginPage {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.login-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.login-left {
+    width: 50%;
+    background: linear-gradient(135deg, #0f4c81, #2196f3);
+    color: white;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-left h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.login-left p {
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.login-left ul {
+    list-style: none;
+}
+
+.login-left li {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.login-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eef5ff;
+}
+
+.login-card {
+    width: 380px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+.login-card h2 {
+    text-align: center;
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.login-card p {
+    text-align: center;
+    color: gray;
+    margin-bottom: 25px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.login-options a {
+    text-decoration: none;
+    color: #1565c0;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 13px;
+    background: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: .3s;
+}
+
+.login-card button:hover {
+    background: #0d47a1;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+/* Navigation */
+
+nav {
+    background: #1565c0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+}
+
+nav button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+nav span {
+    margin-right: 20px;
+}
+
+/* Welcome */
+
+.welcome {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.welcome h1 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #555;
+}
+
+/* Cards */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    width: 250px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h2 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+.card button {
+    padding: 10px 20px;
+    border: none;
+    background: #1565c0;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*QUIZ */
+
+.quiz {
+    width: 70%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.quiz h2 {
+    color: #1565c0;
+    margin-bottom: 15px;
+}
+
+.quiz h3 {
+    margin: 20px 0;
+}
+
+.progress {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: #1565c0;
+    border-radius: 20px;
+}
+
+.option {
+    background: #f2f2f2;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.option:hover {
+    background: #dbe9ff;
+}
+
+.quiz button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    background: #1565c0;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* RESULT */
+
+.result {
+    width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.result h1 {
+    color: #1565c0;
+    margin-bottom: 20px;
+}
+
+.result h2 {
+    margin-bottom: 20px;
+}
+
+.result button {
+    padding: 12px 25px;
+    background: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* HISTORY */
+
+.history {
+    width: 90%;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.history h2 {
+    color: #1565c0;
+    margin-bottom: 20px;
+}
+
+#history p {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-left,
+    .login-right {
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .login-card {
+        width: 90%;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quiz,
+    .result,
+    .history {
+        width: 95%;
+    }
+
+}

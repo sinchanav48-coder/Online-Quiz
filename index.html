@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz & Practice Platform</title>
+
+    <link rel="stylesheet" href="Quiz.css">
+
+
+<body>
+
+<!-- LOGIN PAGE -->
+
+<div id="loginPage" class="login-container">
+
+    <div class="login-left">
+
+        <h1>Quiz & Practice Platform</h1>
+
+        <p>
+            Practice smarter with interactive quizzes, improve your
+            knowledge, and track your performance in real time.
+        </p>
+
+        <ul>
+            <li>✔ Subject Wise Quiz</li>
+            <li>✔ Live Timer</li>
+            <li>✔ Instant Results</li>
+            <li>✔ Performance History</li>
+        </ul>
+
+    </div>
+
+    <div class="login-right">
+
+        <div class="login-card">
+
+            <h2>Student Login</h2>
+
+            <p>Login to continue</p>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Student Name"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <div class="login-options">
+
+                <label>
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+
+                <a href="#">Forgot Password?</a>
+
+            </div>
+
+            <button onclick="login()">Login</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--  DASHBOARD  -->
+
+<div id="dashboard" class="dashboard">
+
+    <nav>
+
+        <h2>Quiz & Practice Platform</h2>
+
+        <div>
+
+            <span>
+                Welcome,
+                <b id="studentName"></b>
+            </span>
+
+            <button onclick="logout()">Logout</button>
+
+        </div>
+
+    </nav>
+
+    <section class="welcome">
+
+        <h1>Student Dashboard</h1>
+
+        <p>Select any subject to start your quiz.</p>
+
+    </section>
+
+    <section class="cards">
+
+        <div class="card" onclick="startQuiz('HTML')">
+            <h2>HTML</h2>
+            <p>10 Practice Questions</p>
+            <button>Start Quiz</button>
+        </div>
+
+        <div class="card" onclick="startQuiz('CSS')">
+            <h2>CSS</h2>
+            <p>10 Practice Questions</p>
+            <button>Start Quiz</button>
+        </div>
+
+        <div class="card" onclick="startQuiz('JavaScript')">
+            <h2>JavaScript</h2>
+            <p>10 Practice Questions</p>
+            <button>Start Quiz</button>
+        </div>
+
+    </section>
+
+    <!--  QUIZ SECTION  -->
+
+    <section id="quizPage" class="quiz hide">
+
+        <h2 id="subjectName"></h2>
+
+        <p>
+            Time Left :
+            <span id="timer">30</span>
+            Seconds
+        </p>
+
+        <div class="progress">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+        <h3 id="question"></h3>
+
+        <div id="options"></div>
+
+        <button onclick="nextQuestion()">
+            Next Question
+        </button>
+
+    </section>
+
+    <!--  RESULT  -->
+
+    <section id="resultPage" class="result hide">
+
+        <h1>Quiz Completed 🎉</h1>
+
+        <h2 id="finalScore"></h2>
+
+        <button onclick="goHome()">
+            Back to Dashboard
+        </button>
+
+    </section>
+
+    <!--HISTORY  -->
+
+    <section class="history">
+
+        <h2>Previous Results</h2>
+
+        <div id="history"></div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
