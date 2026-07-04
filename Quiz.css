@@ -65,7 +65,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #228b14;
+    background: #b2caaf;
 }
 
 .login-card {
@@ -153,7 +153,7 @@ body {
 }
 
 .logo p {
-    color: #c0084f;
+    color: #dfdfdf;
     font-size: 13px;
 }
 
@@ -170,10 +170,10 @@ body {
 
 .logout-btn {
     border: none;
-    background: #ef4444;
-    color: white;
+    background: #b319f0;
+    color: #ffffff;
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius:50px;
     cursor: pointer;
     transition: .3s;
 }
