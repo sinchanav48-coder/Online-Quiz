@@ -10,6 +10,9 @@ body {
 }
 
 /* Hide Elements */
+.hide {
+    display: none !important;
+}
 
 #dashboard {
     display: none;
@@ -32,7 +35,7 @@ body {
 
 .login-left {
     width: 50%;
-    background: linear-gradient(135deg, #0f4c81, #2196f3);
+    background: linear-gradient(135deg, #c3618b, #2196f3);
     color: rgb(12, 12, 12);
     padding: 80px;
     display: flex;
@@ -65,12 +68,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #b2caaf;
+    background: linear-gradient(135deg, #be84b5, #e0f7fa);
 }
 
 .login-card {
     width: 380px;
-    background: white;
+    background: linear-gradient(45deg,rgb(50, 154, 170),lavender);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
@@ -79,7 +82,7 @@ body {
 .login-card h2 {
     text-align: center;
     font-weight:bolder;
-    color: #000000;
+    color: #e11b1b;
     margin-bottom: 10px;
 }
 
@@ -94,7 +97,7 @@ body {
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 50px;
     font-size: 16px;
 }
 
@@ -117,7 +120,7 @@ body {
     background: #1565c0;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 17px;
     transition: .3s;
