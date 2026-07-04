@@ -15,7 +15,7 @@ body {
     display: none;
     width: 100%;
     min-height: 100vh;
-    background: #f5f7fb;
+    background:linear-gradient(45deg,rgb(87, 20, 20),blue);
 }
 
 #loginPage {
@@ -33,7 +33,7 @@ body {
 .login-left {
     width: 50%;
     background: linear-gradient(135deg, #0f4c81, #2196f3);
-    color: white;
+    color: rgb(12, 12, 12);
     padding: 80px;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #eef5ff;
+    background: #b2caaf;
 }
 
 .login-card {
@@ -78,7 +78,8 @@ body {
 
 .login-card h2 {
     text-align: center;
-    color: #1565c0;
+    font-weight:bolder;
+    color: #000000;
     margin-bottom: 10px;
 }
 
@@ -127,94 +128,252 @@ body {
 }
 
 /* DASHBOARD */
-
 .dashboard {
     min-height: 100vh;
-    background: #f5f7fb;
+    background: #eef3ff;
 }
 
-/* Navigation */
+/* ===============================
+   NAVBAR
+================================= */
 
-nav {
-    background: #1565c0;
-    color: white;
+.navbar {
+    width: 100%;
+    background: linear-gradient(40deg,rgb(114, 94, 202),rgb(0, 0, 0));
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
+    padding: 18px 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
 }
 
-nav button {
-    background: red;
-    color: white;
+.logo h2 {
+    color: #000000;
+    font-size: 28px;
+}
+
+.logo p {
+    color: #dfdfdf;
+    font-size: 13px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.welcome-text {
+    color: #cc0808;
+    font-size: 16px;
+}
+
+.logout-btn {
     border: none;
-    padding: 10px 18px;
-    border-radius: 6px;
+    background: #b319f0;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius:50px;
     cursor: pointer;
+    transition: .3s;
 }
 
-nav span {
-    margin-right: 20px;
+.logout-btn:hover {
+    background: #dc2626;
 }
 
-/* Welcome */
+/* ===============================
+   HERO SECTION
+================================= */
 
-.welcome {
+.hero-section {
+    width: 92%;
+    margin: 30px auto;
+    padding: 55px;
+    border-radius: 20px;
+    background: linear-gradient(135deg,#2563eb,#f63b3b);
+    color: white;
+    box-shadow: 0 15px 35px rgba(37,99,235,.25);
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    max-width: 650px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.explore-btn {
+    background: white;
+    color: #2563eb;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.explore-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ===============================
+   STATISTICS
+================================= */
+
+.dashboard-stats {
+    width: 92%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background:linear-gradient(30deg,lavender,yellow);
+    padding: 28px;
+    border-radius: 18px;
     text-align: center;
-    padding: 40px 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    transition: .3s;
 }
 
-.welcome h1 {
-    color: #1565c0;
-    margin-bottom: 10px;
+.stat-card:hover {
+    transform: translateY(-8px);
 }
 
-.welcome p {
+.stat-card h3 {
     color: #555;
+    margin-bottom: 12px;
 }
 
-/* Cards */
+.stat-card h2 {
+    color: #2563eb;
+    font-size: 34px;
+}
+
+/* ===============================
+   SUBJECT SECTION
+================================= */
+
+.subject-section {
+    width: 92%;
+    margin: 45px auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #d61717;
+    margin-bottom: 30px;
+}
 
 .cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 25px;
 }
 
 .card {
-    width: 250px;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+    background: lavender;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
     transition: .3s;
 }
 
 .card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(37,99,235,.20);
 }
 
-.card h2 {
-    color: #1565c0;
-    margin-bottom: 10px;
-}
-
-.card p {
+.card-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #386adf;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
-.card button {
-    padding: 10px 20px;
-    border: none;
-    background: #1565c0;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
+.card h2 {
+    color: #2563eb;
+    margin-bottom: 12px;
 }
 
+.card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-footer span {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.card button {
+    border: none;
+    background: #000000;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.card button:hover {
+    background: #1d4ed8;
+}
+
+/* RESPONSIVE DASHBOARD*/
+
+@media (max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+        text-align:center;
+    }
+
+    .hero-section{
+        padding:35px 25px;
+    }
+
+    .hero-content h1{
+        font-size:30px;
+    }
+
+    .dashboard-stats{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .card-footer{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+}
 /*QUIZ */
 
 .quiz {
