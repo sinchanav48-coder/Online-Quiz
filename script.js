@@ -118,6 +118,28 @@ answer:1
 ]
 
 };
+
+// GREETING BASED ON TIME
+function showGreeting() {
+
+    let hour = new Date().getHours();
+    let greeting = "";
+
+    if (hour >= 5 && hour < 12) {
+        greeting = "🌞 Good Morning!";
+    }
+    else if (hour >= 12 && hour < 17) {
+        greeting = "☀️ Good Afternoon!";
+    }
+    else if (hour >= 17 && hour < 21) {
+        greeting = "🌇 Good Evening!";
+    }
+    else {
+        greeting = "🌙 Good Night!";
+    }
+
+    document.getElementById("greeting").textContent = greeting;
+}
 // LOGIN
 function login(){
 
@@ -328,3 +350,5 @@ function showHistory(){
     document.getElementById("history").innerHTML = output;
 
 }
+// Call greeting function
+showGreeting();

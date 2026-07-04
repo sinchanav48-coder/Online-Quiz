@@ -100,6 +100,13 @@ body {
     border-radius: 50px;
     font-size: 16px;
 }
+.greeting {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1565c0;
+    margin-bottom: 15px;
+}
 
 .login-options {
     display: flex;
