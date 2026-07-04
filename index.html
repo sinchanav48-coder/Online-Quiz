@@ -9,62 +9,110 @@
 
 <body>
 
-<!-- LOGIN PAGE -->
-
 <div id="loginPage" class="login-container">
 
+    <!-- Left Section -->
     <div class="login-left">
 
-        <h1>Quiz & Practice Platform</h1>
+        <div class="brand-badge">
+            🎓 Quiz & Practice Platform
+        </div>
 
-        <p>
-            Practice smarter with interactive quizzes, improve your
-            knowledge, and track your performance in real time.
+        <u><b><h1>Learn. Practice. Succeed.</h1></u></b>
+
+        <p style="font-family:Verdana, Geneva, Tahoma, sans-serif">
+            Prepare for exams with interactive quizzes, real-time scoring,
+            subject-wise practice, and detailed performance analytics.
         </p>
 
-        <ul>
-            <li>✔ Subject Wise Quiz</li>
-            <li>✔ Live Timer</li>
-            <li>✔ Instant Results</li>
-            <li>✔ Performance History</li>
-        </ul>
+        <div class="feature-list">
+            <ul>
+                <li>📚 Subject-wise Practice Tests</li>
+                <li>⏱️ Live Quiz Timer</li>
+                <li>📊 Instant Score & Feedback</li>
+                <li>📈 Performance History</li>
+                <li>🏆 Track Your Progress</li>
+            </ul>
+        </div>
 
     </div>
 
+    <!-- Right Section -->
     <div class="login-right">
 
-        <div class="login-card">
+        <form
+            class="login-card"
+            id="loginForm"
+            onsubmit="login(); return false;"
+        >
 
-            <h2>Student Login</h2>
+            <div class="login-header">
+                <h2>Welcome Back 👋</h2>
+                <p>Sign in to continue your learning journey.</p>
+            </div>
 
-            <p>Login to continue</p>
+            <div class="input-group">
 
-            <input
-                type="text"
-                id="username"
-                placeholder="Student Name"
-            >
-
-            <input
-                type="password"
-                id="password"
-                placeholder="Password"
-            >
-
-            <div class="login-options">
-
-                <label>
-                    <input type="checkbox">
-                    Remember Me
+                <label for="username" class="visually-hidden">
+                    Student Name
                 </label>
 
-                <a href="#">Forgot Password?</a>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="👤 Student Name"
+                    autocomplete="name"
+                    required
+                >
 
             </div>
 
-            <button onclick="login()">Login</button>
+            <div class="input-group">
 
-        </div>
+                <label for="password" class="visually-hidden">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="🔒 Password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+            <div class="login-options">
+
+                <label class="remember-option">
+                    <input
+                        type="checkbox"
+                        id="rememberMe"
+                    >
+                    Remember Me
+                </label>
+
+                <a href="#">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+            <button type="submit">
+                Login
+            </button>
+
+            <div class="login-footer">
+                <p>
+                    Ready to improve your skills?
+                    <strong>Start practicing today!</strong>
+                </p>
+            </div>
+
+        </form>
 
     </div>
 
