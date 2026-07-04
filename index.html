@@ -70,85 +70,220 @@
 
 </div>
 
-<!--  DASHBOARD  -->
+<!--  DASHBOARD -->
 
 <div id="dashboard" class="dashboard">
 
-    <nav>
+    <!-- Navigation -->
+    <nav class="navbar">
 
-        <h2>Quiz & Practice Platform</h2>
+        <div class="logo">
+            <h2>🎓 QuizMaster</h2>
+            <p>Learn • Practice • Achieve</p>
+        </div>
 
-        <div>
-
-            <span>
+        <div class="nav-right">
+            <span class="welcome-text">
                 Welcome,
-                <b id="studentName"></b>
+                <strong id="studentName"></strong>
             </span>
 
-            <button onclick="logout()">Logout</button>
-
+            <button class="logout-btn" onclick="logout()">
+                Logout
+            </button>
         </div>
 
     </nav>
 
-    <section class="welcome">
+    <!-- Hero Section -->
+    <section class="hero-section">
 
-        <h1>Student Dashboard</h1>
+        <div class="hero-content">
 
-        <p>Select any subject to start your quiz.</p>
+            <h1>Welcome Back!</h1>
 
-    </section>
+            <p>
+                Improve your knowledge with interactive quizzes,
+                track your progress, and become a better programmer.
+            </p>
 
-    <section class="cards">
+            <button class="explore-btn">
+                Start Learning
+            </button>
 
-        <div class="card" onclick="startQuiz('HTML')">
-            <h2>HTML</h2>
-            <p>10 Practice Questions</p>
-            <button>Start Quiz</button>
-        </div>
-
-        <div class="card" onclick="startQuiz('CSS')">
-            <h2>CSS</h2>
-            <p>10 Practice Questions</p>
-            <button>Start Quiz</button>
-        </div>
-
-        <div class="card" onclick="startQuiz('JavaScript')">
-            <h2>JavaScript</h2>
-            <p>10 Practice Questions</p>
-            <button>Start Quiz</button>
         </div>
 
     </section>
 
-    <!--  QUIZ SECTION  -->
+    <!-- Dashboard Statistics -->
+    <section class="dashboard-stats">
+
+        <div class="stat-card">
+            <h3>📚 Subjects</h3>
+            <h2>3</h2>
+        </div>
+
+        <div class="stat-card">
+            <h3>❓ Questions</h3>
+            <h2>30+</h2>
+        </div>
+
+        <div class="stat-card">
+            <h3>🏆 Level</h3>
+            <h2>Beginner</h2>
+        </div>
+
+        <div class="stat-card">
+            <h3>⭐ Progress</h3>
+            <h2>0%</h2>
+        </div>
+
+    </section>
+
+    <!-- Subject Cards -->
+    <section class="subject-section">
+
+        <h2 class="section-title">
+            Choose Your Subject
+        </h2>
+
+        <div class="cards">
+
+            <!-- HTML -->
+
+            <div class="card" onclick="startQuiz('HTML')">
+
+                <div class="card-icon">🌐</div>
+
+                <h2>HTML</h2>
+
+                <p>
+                    Learn the structure of webpages with
+                    beginner-friendly questions.
+                </p>
+
+                <div class="card-footer">
+
+                    <span>10 Questions</span>
+
+                    <button>
+                        Start Quiz →
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CSS -->
+
+            <div class="card" onclick="startQuiz('CSS')">
+
+                <div class="card-icon">🎨</div>
+
+                <h2>CSS</h2>
+
+                <p>
+                    Practice styling, layouts,
+                    Flexbox, Grid, and animations.
+                </p>
+
+                <div class="card-footer">
+
+                    <span>10 Questions</span>
+
+                    <button>
+                        Start Quiz →
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- JavaScript -->
+
+            <div class="card" onclick="startQuiz('JavaScript')">
+
+                <div class="card-icon">⚡</div>
+
+                <h2>JavaScript</h2>
+
+                <p>
+                    Test your programming skills with
+                    JavaScript logic and DOM questions.
+                </p>
+
+                <div class="card-footer">
+
+                    <span>10 Questions</span>
+
+                    <button>
+                        Start Quiz →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= QUIZ SECTION ================= -->
 
     <section id="quizPage" class="quiz hide">
 
-        <h2 id="subjectName"></h2>
+        <div class="quiz-header">
 
-        <p>
-            Time Left :
-            <span id="timer">30</span>
-            Seconds
-        </p>
+            <h2 id="subjectName"></h2>
 
-        <div class="progress">
+            <div class="timer-box">
 
-            <div id="progressBar"></div>
+                ⏱ Time Left :
+                <span id="timer">30</span>s
+
+            </div>
 
         </div>
 
-        <h3 id="question"></h3>
+        <!-- Progress -->
 
-        <div id="options"></div>
+        <div class="progress-container">
 
-        <button onclick="nextQuestion()">
-            Next Question
-        </button>
+            <div class="progress">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+        </div>
+
+        <!-- Question -->
+
+        <div class="question-box">
+
+            <h3 id="question"></h3>
+
+        </div>
+
+        <!-- Options -->
+
+        <div id="options" class="options-container"></div>
+
+        <!-- Navigation -->
+
+        <div class="quiz-buttons">
+
+            <button class="next-btn" onclick="nextQuestion()">
+
+                Next Question →
+
+            </button>
+
+        </div>
 
     </section>
 
+</div>
     <!--  RESULT  -->
 
     <section id="resultPage" class="result hide">
