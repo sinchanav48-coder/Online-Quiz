@@ -201,159 +201,197 @@
 
         <div class="cards">
 
-            <!-- HTML -->
+            <!-- =========================
+        SUBJECT SECTION
+===========-->
 
-            <div class="card" onclick="startQuiz('HTML')">
+<section id="homePage">
 
-                <div class="card-icon">🌐</div>
+    <div class="card-container">
 
+        <!-- HTML -->
+        <article class="card" onclick="startQuiz('HTML')">
+
+            <div class="card-icon">🌐</div>
+
+            <div class="card-content">
                 <h2>HTML</h2>
 
                 <p>
-                    Learn the structure of webpages with
-                    beginner-friendly questions.
+                    Learn the structure of modern web pages through
+                    beginner-friendly and interactive questions.
                 </p>
+            </div>
 
-                <div class="card-footer">
+            <div class="card-footer">
 
-                    <span>10 Questions</span>
+                <span>10 Questions</span>
 
-                    <button>
-                        Start Quiz →
-                    </button>
-
-                </div>
+                <button type="button">
+                    Start Quiz →
+                </button>
 
             </div>
 
-            <!-- CSS -->
+        </article>
 
-            <div class="card" onclick="startQuiz('CSS')">
+        <!-- CSS -->
+        <article class="card" onclick="startQuiz('CSS')">
 
-                <div class="card-icon">🎨</div>
+            <div class="card-icon">🎨</div>
+
+            <div class="card-content">
 
                 <h2>CSS</h2>
 
                 <p>
-                    Practice styling, layouts,
-                    Flexbox, Grid, and animations.
+                    Practice layouts, Flexbox, Grid, responsive design,
+                    animations, and styling techniques.
                 </p>
-
-                <div class="card-footer">
-
-                    <span>10 Questions</span>
-
-                    <button>
-                        Start Quiz →
-                    </button>
-
-                </div>
 
             </div>
 
-            <!-- JavaScript -->
+            <div class="card-footer">
 
-            <div class="card" onclick="startQuiz('JavaScript')">
+                <span>10 Questions</span>
 
-                <div class="card-icon">⚡</div>
+                <button type="button">
+                    Start Quiz →
+                </button>
+
+            </div>
+
+        </article>
+
+        <!-- JavaScript -->
+        <article class="card" onclick="startQuiz('JavaScript')">
+
+            <div class="card-icon">⚡</div>
+
+            <div class="card-content">
 
                 <h2>JavaScript</h2>
 
                 <p>
-                    Test your programming skills with
-                    JavaScript logic and DOM questions.
+                    Strengthen your programming skills with JavaScript,
+                    DOM manipulation, and logical problem-solving.
                 </p>
 
-                <div class="card-footer">
+            </div>
 
-                    <span>10 Questions</span>
+            <div class="card-footer">
 
-                    <button>
-                        Start Quiz →
-                    </button>
+                <span>10 Questions</span>
 
-                </div>
+                <button type="button">
+                    Start Quiz →
+                </button>
 
             </div>
 
-        </div>
+        </article>
 
-    </section>
-
-    <!--  QUIZ SECTION  -->
-
-    <section id="quizPage" class="quiz hide">
-
-        <div class="quiz-header">
-
-            <h2 id="subjectName"></h2>
-
-            <div class="timer-box">
-
-                ⏱ Time Left :
-                <span id="timer">30</span>s
-
-            </div>
-
-        </div>
-    
-        <!-- Progress -->
-
-        <div class="progress-container">
-
-            <div class="progress">
-
-                <div id="progressBar"></div>
-
-            </div>
-
-        </div>
-
-        <!-- Question -->
-
-        <div class="question-box">
-
-            <h3 id="question"></h3>
-
-        </div>
-
-        <!-- Options -->
-
-        <div id="options" class="options-container"></div>
-
-        <!-- Navigation -->
-
-        <div class="quiz-buttons">
-
-            <button class="next-btn" onclick="nextQuestion()">
-
-                Next Question →
-
-            </button>
-
-        </div>
-
-    </section>
-
-</div>
-    <!-- RESULT -->
-<section id="resultPage" class="result hide">
-
-    <h1>Quiz Completed 🎉</h1>
-
-    <h2 id="finalScore"></h2>
-
-    <section class="history">
-        <h2>Previous Results</h2>
-        <div id="history"></div>
-    </section>
-
-    <button onclick="goHome()">
-        Login Again
-    </button>
+    </div>
 
 </section>
 
+
+<!-- =========================
+          QUIZ SECTION
+========================= -->
+
+<section id="quizPage" class="quiz hide">
+
+    <!-- Quiz Header -->
+    <header class="quiz-header">
+
+        <h2 id="subjectName"></h2>
+
+        <div class="timer-box">
+
+            <span>⏱ Time Left</span>
+
+            <strong>
+                <span id="timer">30</span>s
+            </strong>
+
+        </div>
+
+    </header>
+
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+
+        <div class="progress">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Question -->
+    <div class="question-box">
+
+        <h3 id="question"></h3>
+
+    </div>
+
+
+    <!-- Options -->
+    <div id="options" class="options-container"></div>
+
+
+    <!-- Navigation -->
+    <div class="quiz-buttons">
+
+        <button
+            type="button"
+            class="next-btn"
+            onclick="nextQuestion()">
+
+            Next Question →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+        RESULT SECTION
+========================= -->
+
+<section id="resultPage" class="result hide">
+
+    <div class="result-content">
+
+        <h1>🎉 Quiz Completed!</h1>
+
+        <h2 id="finalScore"></h2>
+
+        <section class="history">
+
+            <h2>📊 Previous Results</h2>
+
+            <div id="history"></div>
+
+        </section>
+
+        <button
+            type="button"
+            onclick="goHome()">
+
+            Login Again
+
+        </button>
+
+    </div>
+
+</section>
 <script src="script.js"></script>
 
 </body>
