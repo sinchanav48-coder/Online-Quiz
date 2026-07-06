@@ -123,7 +123,7 @@
 
 <!--  DASHBOARD -->
 
-<div id="dashboard" class="dashboard">
+<div id="dashboard" class="dashboard" style="display:none;">
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -145,7 +145,6 @@
         </div>
 
     </nav>
-
     <!-- Hero Section -->
     <section class="hero-section">
 
@@ -360,39 +359,27 @@
 
 </section>
 
+</div>
+  <!-- Result Page -->
+    <section id="resultPage" class="result hide">
 
-<!-- =========================
-        RESULT SECTION
-========================= -->
-
-<section id="resultPage" class="result hide">
-
-    <div class="result-content">
-
-        <h1>🎉 Quiz Completed!</h1>
+        <h1>Quiz Completed 🎉</h1>
 
         <h2 id="finalScore"></h2>
 
         <section class="history">
 
-            <h2>📊 Previous Results</h2>
+            <h2>Previous Results</h2>
 
             <div id="history"></div>
 
         </section>
 
-        <button
-            type="button"
-            onclick="goHome()">
-
-            Login Again
-
+        <button onclick="goHome()">
+            Back to Dashboard
         </button>
 
-    </div>
-
-</section>
+    </section>
 <script src="script.js"></script>
-
 </body>
 </html>
