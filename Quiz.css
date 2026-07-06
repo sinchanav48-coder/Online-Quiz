@@ -128,6 +128,7 @@ body {
 }
 
 /* DASHBOARD */
+
 .dashboard {
     min-height: 100vh;
     background: #eef3ff;
@@ -137,16 +138,16 @@ body {
 
 .navbar {
     width: 100%;
-    background: linear-gradient(40deg,rgb(114, 94, 202),rgb(0, 0, 0));
+    background: linear-gradient(40deg, rgb(114, 94, 202), rgb(0, 0, 0));
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 18px 50px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .logo h2 {
-    color: #000000;
+    color: #000;
     font-size: 28px;
 }
 
@@ -167,28 +168,29 @@ body {
 }
 
 .logout-btn {
-    border: none;
     background: #b319f0;
-    color: #ffffff;
+    color: #fff;
+    border: none;
     padding: 10px 20px;
-    border-radius:50px;
+    border-radius: 50px;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .logout-btn:hover {
     background: #dc2626;
 }
 
-/* HERO SECTION */
+/*HERO SECTION*/
+
 .hero-section {
     width: 92%;
     margin: 30px auto;
     padding: 55px;
     border-radius: 20px;
-    background: linear-gradient(135deg,#2563eb,#f63b3b);
+    background: linear-gradient(135deg, #2563eb, #f63b3b);
     color: white;
-    box-shadow: 0 15px 35px rgba(37,99,235,.25);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
 }
 
 .hero-content h1 {
@@ -210,30 +212,30 @@ body {
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .explore-btn:hover {
     transform: translateY(-3px);
 }
 
-/* STATISTICS*/
+/*STATISTICS */
 
 .dashboard-stats {
     width: 92%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
 .stat-card {
-    background:linear-gradient(30deg,lavender,yellow);
+    background: linear-gradient(30deg, lavender, yellow);
     padding: 28px;
     border-radius: 18px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-    transition: .3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
 }
 
 .stat-card:hover {
@@ -250,7 +252,7 @@ body {
     font-size: 34px;
 }
 
-/* SUBJECT SECTION*/
+/*SUBJECT SECTION*/
 
 .subject-section {
     width: 92%;
@@ -266,29 +268,29 @@ body {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
 .card {
     background: lavender;
-    border-radius: 18px;
     padding: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
-    transition: .3s;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(37,99,235,.20);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
 }
 
 .card-icon {
     width: 65px;
     height: 65px;
-    border-radius: 50%;
     background: #386adf;
     color: white;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -319,50 +321,50 @@ body {
 }
 
 .card button {
-    border: none;
-    background: #000000;
+    background: #000;
     color: white;
+    border: none;
     padding: 10px 18px;
     border-radius: 8px;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .card button:hover {
     background: #1d4ed8;
 }
 
-/* RESPONSIVE DASHBOARD*/
+/* RESPONSIVE DESIGN */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .navbar{
-        flex-direction:column;
-        gap:15px;
-        padding:20px;
-        text-align:center;
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
     }
 
-    .hero-section{
-        padding:35px 25px;
+    .hero-section {
+        padding: 35px 25px;
     }
 
-    .hero-content h1{
-        font-size:30px;
+    .hero-content h1 {
+        font-size: 30px;
     }
 
-    .dashboard-stats{
-        grid-template-columns:1fr;
+    .dashboard-stats {
+        grid-template-columns: 1fr;
     }
 
-    .cards{
-        grid-template-columns:1fr;
+    .cards {
+        grid-template-columns: 1fr;
     }
 
-    .card-footer{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:12px;
+    .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
     }
 }
 /*QUIZ */
@@ -457,6 +459,7 @@ body {
 /* HISTORY */
 
 .history {
+    display:none;
     width: 90%;
     margin: 40px auto;
     background: white;

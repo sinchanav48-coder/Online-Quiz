@@ -5,8 +5,7 @@
     <title>Quiz & Practice Platform</title>
 
     <link rel="stylesheet" href="Quiz.css">
-
-
+</head>
 <body>
 
 <!-- LOGIN PAGE -->
@@ -72,7 +71,7 @@
 
 <!--  DASHBOARD -->
 
-<div id="dashboard" class="dashboard">
+<div id="dashboard" class="dashboard" style="display:none;">
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -94,7 +93,6 @@
         </div>
 
     </nav>
-
     <!-- Hero Section -->
     <section class="hero-section">
 
@@ -285,30 +283,26 @@
     </section>
 
 </div>
-    <!-- RESULT -->
+  <!-- Result Page -->
+    <section id="resultPage" class="result hide">
 
-<section id="resultPage" class="result hide">
+        <h1>Quiz Completed 🎉</h1>
 
-    <h1>Quiz Completed 🎉</h1>
+        <h2 id="finalScore"></h2>
 
-    <h2 id="finalScore"></h2>
+        <section class="history">
 
- <section class="history">
+            <h2>Previous Results</h2>
 
-        <h2>Previous Results</h2>
+            <div id="history"></div>
 
-        <div id="history"></div>
+        </section>
+
+        <button onclick="goHome()">
+            Back to Dashboard
+        </button>
 
     </section>
-
-    <button onclick="goHome()">
-        Back to Dashboard
-    </button>
-
-</section>
-</div>
-
 <script src="script.js"></script>
-
 </body>
 </html>
