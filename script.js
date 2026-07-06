@@ -273,8 +273,6 @@ function nextQuestion(){
 }
 // SHOW RESULT
 
-// SHOW RESULT
-
 function showResult() {
 
     document.getElementById("quizPage").classList.add("hide");
@@ -284,19 +282,15 @@ function showResult() {
         "Your Score : " + score + " / " + currentQuiz.length;
 
     let percentage = Math.round((score / currentQuiz.length) * 100);
-    let today = new Date().toLocaleDateString();
-    let subject = document.getElementById("subjectName").textContent;
 
     let history = JSON.parse(localStorage.getItem("history")) || [];
 
-    history.push(`
-        <tr>
-            <td>${today}</td>
-            <td>${subject}</td>
-            <td>${score}/${currentQuiz.length}</td>
-            <td>${percentage}%</td>
-        </tr>
-    `);
+    history.push({
+        date: new Date().toLocaleDateString(),
+        subject: document.getElementById("subjectName").textContent,
+        score: score + "/" + currentQuiz.length,
+        percentage: percentage + "%"
+    });
 
     localStorage.setItem("history", JSON.stringify(history));
 
@@ -324,23 +318,31 @@ function showHistory() {
 
     let output = "";
 
-    if(history.length === 0){
+    if (history.length === 0) {
 
         output = `
             <tr>
-                <td colspan="4">No Quiz Attempted Yet.</td>
+                <td colspan="4">No Quiz Attempted Yet</td>
             </tr>
         `;
 
-    }else{
+    } else {
 
-        for(let i=0;i<history.length;i++){
-            output += history[i];
-        }
+        history.forEach(item => {
+
+            output += `
+                <tr>
+                    <td>${item.date}</td>
+                    <td>${item.subject}</td>
+                    <td>${item.score}</td>
+                    <td>${item.percentage}</td>
+                </tr>
+            `;
+
+        });
 
     }
 
     document.getElementById("historyBody").innerHTML = output;
 }
-
 console.log("Script Loaded");
