@@ -1,1 +1,14 @@
 # Online-Quiz
+- 🔐 Modern and responsive login page
+- 👤 Personalized welcome message
+- 📚 Subject-wise quizzes
+  - HTML
+  - CSS
+  - JavaScript
+- ⏱️ Countdown timer for each question
+- 📊 Real-time score calculation
+- 📈 Progress bar during quizzes
+- 📝 Multiple-choice questions
+- 📜 Quiz result history
+- 🚪 Logout functionality
+- 💻 Responsive UI for desktop and mobile
