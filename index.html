@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Quiz & Practice Platform</title>
     <link rel="stylesheet" href="Quiz.css">
 </head>
-
 <body>
 
-    <!-- =========================
-            LOGIN PAGE
-    ========================== -->
-
+    <!--LOGIN PAGE -->
     <div id="loginPage" class="login-container">
 
         <!-- Left Section -->
         <div class="login-left">
-
-            <div class="brand-badge">
-                🎓 Quiz & Practice Platform
-            </div>
+            <div class="brand-badge">🎓 Quiz & Practice Platform</div>
 
             <h1><u>Learn. Practice. Succeed.</u></h1>
 
@@ -38,15 +30,11 @@
                     <li>🏆 Track Your Progress</li>
                 </ul>
             </div>
-
         </div>
 
         <!-- Right Section -->
         <div class="login-right">
-
-            <form class="login-card"
-                  id="loginForm"
-                  onsubmit="login(); return false;">
+            <form class="login-card" id="loginForm" onsubmit="login(); return false;">
 
                 <div id="greeting" class="greeting"></div>
 
@@ -56,11 +44,7 @@
                 </div>
 
                 <div class="input-group">
-
-                    <label for="username" class="visually-hidden">
-                        Student Name
-                    </label>
-
+                    <label for="username" class="visually-hidden">Student Name</label>
                     <input
                         type="text"
                         id="username"
@@ -68,15 +52,10 @@
                         placeholder="👤 Student Name"
                         autocomplete="name"
                         required>
-
                 </div>
 
                 <div class="input-group">
-
-                    <label for="password" class="visually-hidden">
-                        Password
-                    </label>
-
+                    <label for="password" class="visually-hidden">Password</label>
                     <input
                         type="password"
                         id="password"
@@ -86,23 +65,17 @@
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                         title="Password must be at least 8 characters and include uppercase, lowercase, number, and special character."
                         required>
-
                 </div>
 
                 <div class="login-options">
-
                     <label class="remember-option">
                         <input type="checkbox" id="rememberMe">
                         Remember Me
                     </label>
-
                     <a href="#">Forgot Password?</a>
-
                 </div>
 
-                <button type="submit">
-                    Login
-                </button>
+                <button type="submit">Login</button>
 
                 <div class="login-footer">
                     <p>
@@ -112,47 +85,31 @@
                 </div>
 
             </form>
-
         </div>
 
     </div>
 
-    <!-- =========================
-            DASHBOARD
-    ========================== -->
-
+    <!--DASHBOARD -->
     <div id="dashboard" class="dashboard">
 
         <!-- Navbar -->
-
         <nav class="navbar">
-
             <div class="logo">
                 <h2>🎓 QuizMaster</h2>
                 <p>Learn • Practice • Achieve</p>
             </div>
 
             <div class="nav-right">
-
                 <span class="welcome-text">
-                    Welcome,
-                    <strong id="studentName"></strong>
+                    Welcome, <strong id="studentName"></strong>
                 </span>
-
-                <button class="logout-btn" onclick="logout()">
-                    Logout
-                </button>
-
+                <button class="logout-btn" onclick="logout()">Logout</button>
             </div>
-
         </nav>
 
         <!-- Hero -->
-
         <section class="hero-section">
-
             <div class="hero-content">
-
                 <h1>Welcome Back!</h1>
 
                 <p style="font-style:italic;font-family:Verdana, Geneva, Tahoma, sans-serif">
@@ -163,19 +120,13 @@
                 <button
                     class="explore-btn"
                     onclick="document.querySelector('.subject-section').scrollIntoView({behavior:'smooth'})">
-
                     Start Learning
-
                 </button>
-
             </div>
-
         </section>
 
         <!-- Statistics -->
-
         <section class="dashboard-stats">
-
             <div class="stat-card">
                 <h3>📚 Subjects</h3>
                 <h2>3</h2>
@@ -195,202 +146,124 @@
                 <h3>⭐ Progress</h3>
                 <h2>0%</h2>
             </div>
-
         </section>
 
         <!-- Subject Section -->
-
         <section class="subject-section">
-
-            <h2 class="section-title">
-                Choose Your Subject
-            </h2>
+            <h2 class="section-title">Choose Your Subject</h2>
 
             <div class="card-container">
 
                 <!-- HTML -->
-
                 <article class="card" onclick="startQuiz('HTML')">
-
                     <div class="card-icon">🌐</div>
-
                     <div class="card-content">
-
                         <h2>HTML</h2>
-
                         <p>
                             Learn the structure of modern web pages through
                             beginner-friendly and interactive questions.
                         </p>
-
                     </div>
-
                     <div class="card-footer">
-
                         <span>10 Questions</span>
-
-                        <button type="button">
-                            Start Quiz →
-                        </button>
-
+                        <button type="button">Start Quiz →</button>
                     </div>
-
                 </article>
 
                 <!-- CSS -->
-
                 <article class="card" onclick="startQuiz('CSS')">
-
                     <div class="card-icon">🎨</div>
-
                     <div class="card-content">
-
                         <h2>CSS</h2>
-
                         <p>
                             Practice layouts, Flexbox, Grid, responsive design,
                             animations, and styling techniques.
                         </p>
-
                     </div>
-
                     <div class="card-footer">
-
                         <span>10 Questions</span>
-
-                        <button type="button">
-                            Start Quiz →
-                        </button>
-
+                        <button type="button">Start Quiz →</button>
                     </div>
-
                 </article>
 
                 <!-- JavaScript -->
-
                 <article class="card" onclick="startQuiz('JavaScript')">
-
                     <div class="card-icon">⚡</div>
-
                     <div class="card-content">
-
                         <h2>JavaScript</h2>
-
                         <p>
                             Strengthen your programming skills with JavaScript,
                             DOM manipulation, and logical problem-solving.
                         </p>
-
                     </div>
-
                     <div class="card-footer">
-
                         <span>10 Questions</span>
-
-                        <button type="button">
-                            Start Quiz →
-                        </button>
-
+                        <button type="button">Start Quiz →</button>
                     </div>
-
                 </article>
 
             </div>
-
         </section>
 
         <!-- Quiz Section -->
-
         <section id="quizPage" class="quiz hide">
-
             <header class="quiz-header">
-
                 <h2 id="subjectName"></h2>
-
                 <div class="timer-box">
-
-                    ⏱ Time Left:
-                    <strong><span id="timer">30</span>s</strong>
-
+                    ⏱ Time Left: <strong><span id="timer">30</span>s</strong>
                 </div>
-
             </header>
 
             <div class="progress-container">
-
                 <div class="progress">
                     <div id="progressBar"></div>
                 </div>
-
             </div>
 
             <div class="question-box">
-
                 <h3 id="question"></h3>
-
             </div>
 
             <div id="options" class="options-container"></div>
 
             <div class="quiz-buttons">
-
-                <button
-                    type="button"
-                    class="next-btn"
-                    onclick="nextQuestion()">
-
+                <button type="button" class="next-btn" onclick="nextQuestion()">
                     Next Question →
-
                 </button>
-
             </div>
-
         </section>
 
-<!-- Result Section -->
+        <!-- Result Section -->
+        <section id="resultPage" class="result hide">
+            <div class="result-content">
+                <h1>🎉 Quiz Completed!</h1>
+                <h2 id="finalScore"></h2>
+                <p id="resultMessage"></p>
+                <button type="button" onclick="goHome()">Back to Dashboard</button>
+            </div>
 
-<section id="resultPage" class="result hide">
+            <!-- Quiz History -->
+            <section class="history-section">
+                <h2>📜 Quiz History</h2>
 
-    <div class="result-content">
-
-        <h1>🎉 Quiz Completed!</h1>
-
-        <h2 id="finalScore"></h2>
-
-        <p id="resultMessage"></p>
-
-        <button type="button" onclick="goHome()">
-            Back to Dashboard
-        </button>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Subject</th>
+                            <th>Score</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                    </tbody>
+                </table>
+            </section>
+        </section>
 
     </div>
-
-  <!-- Quiz History -->
-
-<section class="history-section">
-
-    <h2>📜 Quiz History</h2>
-
-    <table class="history-table">
-
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Subject</th>
-                <th>Score</th>
-                <th>Percentage</th>
-            </tr>
-        </thead>
-
-        <tbody id="historyBody">
-        </tbody>
-
-    </table>
-
-</section>
 
     <script src="script.js"></script>
 
 </body>
-
 </html>

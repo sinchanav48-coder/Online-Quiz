@@ -1,149 +1,98 @@
-// VARIABLES
 let studentName = "";
 let currentQuestion = 0;
 let score = 0;
 let timer = 30;
 let interval;
 let currentQuiz = [];
-// QUESTIONS
+
 const questions = {
-HTML: [
-{
-question:"What does HTML stand for?",
-options:[
-"Hyper Text Markup Language",
-"Home Tool Markup Language",
-"Hyperlinks Text Makeup Language",
-"Hyper Tool Machine Language"
-],
-answer:0
-},
+    HTML: [
+        {
+            question: "What does HTML stand for?",
+            options: [
+                "Hyper Text Markup Language",
+                "Home Tool Markup Language",
+                "Hyperlinks Text Makeup Language",
+                "Hyper Tool Machine Language"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which tag creates a hyperlink?",
+            options: ["<a>", "<link>", "<href>", "<url>"],
+            answer: 0
+        },
+        {
+            question: "Which tag creates a heading?",
+            options: ["<h1>", "<head>", "<title>", "<p>"],
+            answer: 0
+        }
+    ],
 
-{
-question:"Which tag creates a hyperlink?",
-options:[
-"<a>",
-"<link>",
-"<href>",
-"<url>"
-],
-answer:0
-},
+    CSS: [
+        {
+            question: "CSS stands for?",
+            options: [
+                "Cascading Style Sheets",
+                "Computer Style Sheets",
+                "Creative Style Sheets",
+                "Color Style Sheets"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which property changes text color?",
+            options: ["font-color", "color", "text", "background"],
+            answer: 1
+        },
+        {
+            question: "Which property changes background color?",
+            options: ["background-color", "bg", "color", "body"],
+            answer: 0
+        }
+    ],
 
-{
-question:"Which tag creates a heading?",
-options:[
-"<h1>",
-"<head>",
-"<title>",
-"<p>"
-],
-answer:0
-}
-
-],
-
-CSS: [
-
-{
-question:"CSS stands for?",
-options:[
-"Cascading Style Sheets",
-"Computer Style Sheets",
-"Creative Style Sheets",
-"Color Style Sheets"
-],
-answer:0
-},
-
-{
-question:"Which property changes text color?",
-options:[
-"font-color",
-"color",
-"text",
-"background"
-],
-answer:1
-},
-
-{
-question:"Which property changes background color?",
-options:[
-"background-color",
-"bg",
-"color",
-"body"
-],
-answer:0
-}
-
-],
-
-JavaScript: [
-
-{
-question:"JavaScript is a?",
-options:[
-"Programming Language",
-"Database",
-"Operating System",
-"Browser"
-],
-answer:0
-},
-
-{
-question:"Which keyword declares a variable?",
-options:[
-"let",
-"const",
-"var",
-"All of these"
-],
-answer:3
-},
-
-{
-question:"Which function prints output in console?",
-options:[
-"print()",
-"console.log()",
-"console.print()",
-"log()"
-],
-answer:1
-}
-
-]
-
+    JavaScript: [
+        {
+            question: "JavaScript is a?",
+            options: [
+                "Programming Language",
+                "Database",
+                "Operating System",
+                "Browser"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which keyword declares a variable?",
+            options: ["let", "const", "var", "All of these"],
+            answer: 3
+        },
+        {
+            question: "Which function prints output in console?",
+            options: ["print()", "console.log()", "console.print()", "log()"],
+            answer: 1
+        }
+    ]
 };
-// LOGIN
-function login(){
 
-    console.log("Login function called");
-
+function login() {
     studentName = document.getElementById("username").value.trim();
     let password = document.getElementById("password").value.trim();
 
-    console.log(studentName, password);
-
-    if(studentName === "" || password === ""){
+    if (studentName === "" || password === "") {
         alert("Please enter Username and Password");
         return;
     }
 
     document.getElementById("studentName").textContent = studentName;
-
     document.getElementById("loginPage").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
 
     showHistory();
-
 }
-// LOGOUT
-function logout(){
 
+function logout() {
     clearInterval(interval);
 
     document.getElementById("dashboard").style.display = "none";
@@ -159,16 +108,11 @@ function logout(){
     document.querySelector(".dashboard-stats").classList.remove("hide");
     document.querySelector(".subject-section").classList.remove("hide");
     document.querySelector(".history-section").classList.remove("hide");
-
 }
 
-// START QUIZ
-function startQuiz(subject){
-
+function startQuiz(subject) {
     currentQuiz = questions[subject];
-
     currentQuestion = 0;
-
     score = 0;
 
     document.querySelector(".hero-section").classList.add("hide");
@@ -182,99 +126,63 @@ function startQuiz(subject){
     document.getElementById("subjectName").textContent = subject + " Quiz";
 
     loadQuestion();
-
 }
-// LOAD QUESTION
-function loadQuestion(){
 
+function loadQuestion() {
     clearInterval(interval);
 
     timer = 30;
-
     document.getElementById("timer").textContent = timer;
-
-    interval = setInterval(startTimer,1000);
+    interval = setInterval(startTimer, 1000);
 
     let q = currentQuiz[currentQuestion];
-
     document.getElementById("question").textContent = q.question;
 
     let optionsDiv = document.getElementById("options");
-
     optionsDiv.innerHTML = "";
 
-    for(let i=0;i<q.options.length;i++){
-
+    for (let i = 0; i < q.options.length; i++) {
         let option = document.createElement("div");
-
         option.className = "option";
-
         option.textContent = q.options[i];
-
-        option.onclick = function(){
-
+        option.onclick = function () {
             checkAnswer(i);
-
         };
-
         optionsDiv.appendChild(option);
-
     }
 
     let progress = ((currentQuestion + 1) / currentQuiz.length) * 100;
-
     document.getElementById("progressBar").style.width = progress + "%";
-
 }
-// TIMER
-function startTimer(){
 
+function startTimer() {
     timer--;
-
     document.getElementById("timer").textContent = timer;
 
-    if(timer <= 0){
-
+    if (timer <= 0) {
         nextQuestion();
-
     }
-
 }
-// CHECK ANSWER
-function checkAnswer(index){
 
-    if(index === currentQuiz[currentQuestion].answer){
-
+function checkAnswer(index) {
+    if (index === currentQuiz[currentQuestion].answer) {
         score++;
-
     }
-
     nextQuestion();
-
 }
-// NEXT QUESTION
-function nextQuestion(){
 
+function nextQuestion() {
     clearInterval(interval);
-
     currentQuestion++;
 
-    if(currentQuestion < currentQuiz.length){
-
+    if (currentQuestion < currentQuiz.length) {
         loadQuestion();
-
-    }
-    else{
-
+    } else {
         showResult();
-
     }
-
 }
-// SHOW RESULT
 
 function showResult() {
-
     document.getElementById("quizPage").classList.add("hide");
     document.getElementById("resultPage").classList.remove("hide");
 
@@ -282,7 +190,6 @@ function showResult() {
         "Your Score : " + score + " / " + currentQuiz.length;
 
     let percentage = Math.round((score / currentQuiz.length) * 100);
-
     let history = JSON.parse(localStorage.getItem("history")) || [];
 
     history.push({
@@ -296,10 +203,8 @@ function showResult() {
 
     showHistory();
 }
-// BACK TO DASHBOARD
 
-function goHome(){
-
+function goHome() {
     document.getElementById("resultPage").classList.add("hide");
 
     document.querySelector(".hero-section").classList.remove("hide");
@@ -308,28 +213,20 @@ function goHome(){
     document.querySelector(".history-section").classList.remove("hide");
 
     showHistory();
-
 }
-// SHOW HISTORY
 
 function showHistory() {
-
     let history = JSON.parse(localStorage.getItem("history")) || [];
-
     let output = "";
 
     if (history.length === 0) {
-
         output = `
             <tr>
                 <td colspan="4">No Quiz Attempted Yet</td>
             </tr>
         `;
-
     } else {
-
         history.forEach(item => {
-
             output += `
                 <tr>
                     <td>${item.date}</td>
@@ -338,11 +235,8 @@ function showHistory() {
                     <td>${item.percentage}</td>
                 </tr>
             `;
-
         });
-
     }
 
     document.getElementById("historyBody").innerHTML = output;
 }
-console.log("Script Loaded");
