@@ -7,7 +7,9 @@
 </head>
 <body>
 
-    <!--LOGIN PAGE -->
+    <!-- =========================
+            LOGIN PAGE
+    ========================== -->
     <div id="loginPage" class="login-container">
 
         <!-- Left Section -->
@@ -89,7 +91,9 @@
 
     </div>
 
-    <!--DASHBOARD -->
+    <!-- =========================
+            DASHBOARD
+    ========================== -->
     <div id="dashboard" class="dashboard">
 
         <!-- Navbar -->
@@ -241,24 +245,24 @@
                 <p id="resultMessage"></p>
                 <button type="button" onclick="goHome()">Back to Dashboard</button>
             </div>
+        </section>
 
-            <!-- Quiz History -->
-            <section class="history-section">
-                <h2>📜 Quiz History</h2>
+        <!-- Quiz History -->
+        <section class="history-section">
+            <h2>📜 <span id="historyStudentName"></span>'s Quiz History</h2>
 
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Subject</th>
-                            <th>Score</th>
-                            <th>Percentage</th>
-                        </tr>
-                    </thead>
-                    <tbody id="historyBody">
-                    </tbody>
-                </table>
-            </section>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Subject</th>
+                        <th>Score</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody id="historyBody">
+                </tbody>
+            </table>
         </section>
 
     </div>

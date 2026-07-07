@@ -646,6 +646,11 @@ body {
     margin-bottom: 25px;
 }
 
+.history-section h2 #historyStudentName {
+    color: #d61717;
+    text-transform: capitalize;
+}
+
 .history-table {
     width: 100%;
     border-collapse: collapse;
