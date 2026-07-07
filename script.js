@@ -76,6 +76,10 @@ const questions = {
     ]
 };
 
+function getHistoryKey() {
+    return "history_" + studentName;
+}
+
 function login() {
     studentName = document.getElementById("username").value.trim();
     let password = document.getElementById("password").value.trim();
@@ -190,7 +194,7 @@ function showResult() {
         "Your Score : " + score + " / " + currentQuiz.length;
 
     let percentage = Math.round((score / currentQuiz.length) * 100);
-    let history = JSON.parse(localStorage.getItem("history")) || [];
+    let history = JSON.parse(localStorage.getItem(getHistoryKey())) || [];
 
     history.push({
         date: new Date().toLocaleDateString(),
@@ -199,7 +203,7 @@ function showResult() {
         percentage: percentage + "%"
     });
 
-    localStorage.setItem("history", JSON.stringify(history));
+    localStorage.setItem(getHistoryKey(), JSON.stringify(history));
 
     showHistory();
 }
@@ -216,7 +220,9 @@ function goHome() {
 }
 
 function showHistory() {
-    let history = JSON.parse(localStorage.getItem("history")) || [];
+    document.getElementById("historyStudentName").textContent = studentName;
+
+    let history = JSON.parse(localStorage.getItem(getHistoryKey())) || [];
     let output = "";
 
     if (history.length === 0) {
