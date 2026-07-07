@@ -118,33 +118,15 @@ answer:1
 ]
 
 };
-
-// GREETING BASED ON TIME
-function showGreeting() {
-
-    let hour = new Date().getHours();
-    let greeting = "";
-
-    if (hour >= 5 && hour < 12) {
-        greeting = "🌞 Good Morning!";
-    }
-    else if (hour >= 12 && hour < 17) {
-        greeting = "☀️ Good Afternoon!";
-    }
-    else if (hour >= 17 && hour < 21) {
-        greeting = "🌇 Good Evening!";
-    }
-    else {
-        greeting = "🌙 Good Night!";
-    }
-
-    document.getElementById("greeting").textContent = greeting;
-}
 // LOGIN
 function login(){
 
+    console.log("Login function called");
+
     studentName = document.getElementById("username").value.trim();
     let password = document.getElementById("password").value.trim();
+
+    console.log(studentName, password);
 
     if(studentName === "" || password === ""){
         alert("Please enter Username and Password");
@@ -176,7 +158,7 @@ function logout(){
     document.querySelector(".hero-section").classList.remove("hide");
     document.querySelector(".dashboard-stats").classList.remove("hide");
     document.querySelector(".subject-section").classList.remove("hide");
-    document.querySelector(".history").classList.remove("hide");    
+    document.querySelector(".history-section").classList.remove("hide");
 
 }
 
@@ -192,7 +174,7 @@ function startQuiz(subject){
     document.querySelector(".hero-section").classList.add("hide");
     document.querySelector(".dashboard-stats").classList.add("hide");
     document.querySelector(".subject-section").classList.add("hide");
-    document.querySelector(".history").classList.add("hide");
+    document.querySelector(".history-section").classList.add("hide");
 
     document.getElementById("quizPage").classList.remove("hide");
     document.getElementById("resultPage").classList.add("hide");
@@ -291,25 +273,29 @@ function nextQuestion(){
 }
 // SHOW RESULT
 
-function showResult(){
+function showResult() {
 
     document.getElementById("quizPage").classList.add("hide");
-
     document.getElementById("resultPage").classList.remove("hide");
 
     document.getElementById("finalScore").textContent =
-    "Your Score : " + score + " / " + currentQuiz.length;
+        "Your Score : " + score + " / " + currentQuiz.length;
 
-    // Save Result History
+    let percentage = Math.round((score / currentQuiz.length) * 100);
 
     let history = JSON.parse(localStorage.getItem("history")) || [];
 
-    history.push(studentName + " - " + score + "/" + currentQuiz.length);
+    history.push({
+        date: new Date().toLocaleDateString(),
+        subject: document.getElementById("subjectName").textContent,
+        score: score + "/" + currentQuiz.length,
+        percentage: percentage + "%"
+    });
 
     localStorage.setItem("history", JSON.stringify(history));
 
+    showHistory();
 }
-
 // BACK TO DASHBOARD
 
 function goHome(){
@@ -319,36 +305,44 @@ function goHome(){
     document.querySelector(".hero-section").classList.remove("hide");
     document.querySelector(".dashboard-stats").classList.remove("hide");
     document.querySelector(".subject-section").classList.remove("hide");
-    document.querySelector(".history").classList.remove("hide");
+    document.querySelector(".history-section").classList.remove("hide");
 
     showHistory();
 
 }
 // SHOW HISTORY
 
-function showHistory(){
+function showHistory() {
 
     let history = JSON.parse(localStorage.getItem("history")) || [];
 
     let output = "";
 
-    if(history.length === 0){
+    if (history.length === 0) {
 
-        output = "<p>No Quiz Attempted Yet.</p>";
+        output = `
+            <tr>
+                <td colspan="4">No Quiz Attempted Yet</td>
+            </tr>
+        `;
+
+    } else {
+
+        history.forEach(item => {
+
+            output += `
+                <tr>
+                    <td>${item.date}</td>
+                    <td>${item.subject}</td>
+                    <td>${item.score}</td>
+                    <td>${item.percentage}</td>
+                </tr>
+            `;
+
+        });
 
     }
-    else{
 
-        for(let i = 0; i < history.length; i++){
-
-            output += "<p>" + history[i] + "</p>";
-
-        }
-
-    }
-
-    document.getElementById("history").innerHTML = output;
-
+    document.getElementById("historyBody").innerHTML = output;
 }
-// Call greeting function
-showGreeting();
+console.log("Script Loaded");
