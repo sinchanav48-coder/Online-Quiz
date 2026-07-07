@@ -5,9 +5,6 @@ Thumbs.db
 # VS Code Settings
 .vscode/
 
-# Node Modules (if you use Node.js later)
-node_modules/
-
 # Log Files
 *.log
 
